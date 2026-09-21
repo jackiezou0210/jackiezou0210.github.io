@@ -118,6 +118,8 @@ h3{font-size:1.2rem;line-height:1.3;margin:0}
 .proj{padding:0;display:flex;flex-direction:column;overflow:hidden}
 .pfig{background-color:var(--bg2);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;padding:1rem 1rem .25rem;border-bottom:1px solid var(--line)}
 .pfig svg,.pfig img{display:block;width:100%;height:auto}
+.pfig.has-img{padding:0;background-image:none}
+.pfig.has-img .pcap{padding:.6rem 1rem .8rem}
 .pcap{margin:0;padding:.4rem 0 .7rem;color:var(--muted);font-size:.8rem;line-height:1.4}
 .pbody{padding:1.25rem 1.4rem 1.4rem;display:flex;flex-direction:column;flex:1}
 .ptop{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin:0 0 .6rem;color:var(--muted);font-size:.85rem}
@@ -467,7 +469,7 @@ function build(){
     const story = Object.entries(p.story || {}).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
     const links = (p.links && p.links.length) ? `<div class="plinks">${p.links.map(l => `<a href="${l.href}">${l.label}</a>`).join('')}</div>` : '';
     return `<article class="card proj" data-cat="${p.category}">
-      <div class="pfig">${fig}<p class="pcap">${p.figcap || ''}</p></div>
+      <div class="pfig${p.image ? ' has-img' : ''}">${fig}<p class="pcap">${p.figcap || ''}</p></div>
       <div class="pbody">
         <div class="ptop"><span class="chip">${p.category}</span><span>${p.status}</span></div>
         <h3>${p.title}</h3>
