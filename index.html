@@ -574,62 +574,25 @@ const SITE = {
             text: [
               "Three problems from the build, each with the fix and the new problem that fix created."
             ],
-            aside: {
-  type: "problems",
-  items: [
-    {
-      t: "Body too large",
-      problem:
-        "The body was too large. It created unnecessary empty space and was not as streamlined or as blended into the wing as it could have been.",
-      solution:
-        "Built a slimmer, thinner body that blends into the wing. CFD in ANSYS Fluent showed the drag coefficient dropped by 37.87%.",
-      next:
-        "The slimmer body has weak points and is more prone to damage in a crash."
-    },
-    {
-      t: "Difficult launches",
-      problem:
-        "Because of its size, the plane was hard to launch safely and consistently. That caused many crashes that could have been prevented.",
-      solution:
-        "Built an RC launcher from PVC pipe and surgical tubing that pulls the plane with 4 kg of force.",
-      next:
-        "The servos hit the bump from the tee connections and stripped teeth off the gears. The launch surface was also too low, so the plane had to clear it before the motor throttled up."
-    },
-    {
-      t: "Fragile wing",
-      problem:
-        "The carbon-fiber spars did not reach the ends of the wing, so the tips were fragile and broke off after nearly every crash.",
-      solution:
-        "Instead of buying new rods, redesigned the wing 1.5 in shorter at the ends so the existing rods reach closer to the tips.",
-      next:
-        "The shorter wing increased wing loading."
-    }
-  ]
-},
-
-image: [
-  {
-    src: "uav-cfd-pressure.png",
-    alt: "CFD pressure contour and streamlines over the slimmed body",
-    label: "CFD PRESSURE CONTOUR",
-    caption:
-      "ANSYS Fluent pressure contour and streamlines used to confirm the 37.87% drag reduction."
-  },
-  {
-    src: "uav-launcher-cad.png",
-    alt: "CAD render of the PVC launcher rig with the wing mounted on it",
-    label: "LAUNCHER CAD",
-    caption:
-      "The PVC and surgical-tubing launcher, modeled before it was built."
-  },
-  {
-    src: "uav-wing-repair.png",
-    alt: "Broken wing tip sections on a workbench next to a servo and soldering iron",
-    label: "WING TIP DAMAGE",
-    caption:
-      "Broken tip sections after a crash, the kind of damage that led to shortening the wing."
-  }
-]
+            aside: { type: "problems", items: [
+              { t: "Body too large",
+                problem: "The body was too large. It created unnecessary empty space and was not as streamlined or as blended into the wing as it could have been.",
+                solution: "Built a slimmer, thinner body that blends into the wing. CFD in ANSYS Fluent showed the drag coefficient dropped by 37.87%.",
+                next: "The slimmer body has weak points and is more prone to damage in a crash.",
+                img: { src: "uav-cfd-pressure.png", alt: "CFD pressure contour and streamlines over the slimmed body", label: "CFD PRESSURE CONTOUR",
+                       caption: "ANSYS Fluent pressure contour and streamlines used to confirm the 37.87% drag reduction." } },
+              { t: "Difficult launches",
+                problem: "Because of its size, the plane was hard to launch safely and consistently. That caused many crashes that could have been prevented.",
+                solution: "Built an RC launcher from PVC pipe and surgical tubing that pulls the plane with 4 kg of force.",
+                next: "The servos hit the bump from the tee connections and stripped teeth off the gears. The launch surface was also too low, so the plane had to clear it before the motor throttled up.",
+                img: { src: "uav-launcher-cad.png", alt: "CAD render of the PVC launcher rig with the wing mounted on it", label: "LAUNCHER CAD",
+                       caption: "The PVC and surgical-tubing launcher, modeled before it was built." } },
+              { t: "Fragile wing",
+                problem: "The carbon-fiber spars did not reach the ends of the wing, so the tips were fragile and broke off after nearly every crash.",
+                solution: "Instead of buying new rods, redesigned the wing 1.5 in shorter at the ends so the existing rods reach closer to the tips.",
+                next: "The shorter wing increased wing loading.",
+                img: { src: "uav-wing-repair.png", alt: "Broken foam wing tip sections on a workbench next to a servo and soldering iron", label: "WING TIP DAMAGE",
+                       caption: "Broken tip sections after a crash, the kind of damage that led to shortening the wing." } }
             ] } },
           { nav: "Status", label: "Status",
             headline: "Progress is still ongoing.",
